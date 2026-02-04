@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheep Felting Experience at Meadow House | Rossett, Wales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #FFFDF8;
+            --meadow-white: #FDFBF6;
+            --soft-yellow: #F9E5A8;
+            --lavender: #D8C5E0;
+            --rose-pink: #F4C4D0;
+            --soft-green: #C8D5B9;
+            --sage: #A8B89D;
+            --peach: #F5D4C8;
+            --sky-blue: #D4E4F0;
+            --charcoal: #5A5A52;
+            --soft-grey: #8B8B7E;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Decorative Background Elements */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(249, 229, 168, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 70% 40%, rgba(216, 197, 224, 0.18) 0%, transparent 55%),
+                radial-gradient(circle at 20% 70%, rgba(244, 196, 208, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 85% 80%, rgba(212, 228, 240, 0.12) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        body::after {
+            content: '🌸 💮 🌼 🌺 🌸 💮 🌼 🌺';
+            position: fixed;
+            bottom: 3%;
+            left: -5%;
+            width: 110%;
+            font-size: 1.5rem;
+            opacity: 0.08;
+            letter-spacing: 6rem;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to bottom, transparent, var(--cream));
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--sage);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            animation: fadeInUp 1.4s ease-out;
+        }
+
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.5rem, 7vw, 5.5rem);
+            color: var(--soft-green);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            font-weight: 400;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-description {
+            font-size: 1.4rem;
+            color: var(--warm-grey);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            animation: fadeInUp 1.6s ease-out;
+        }
+
+        .rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(200, 213, 185, 0.2);
+            animation: fadeInUp 1.8s ease-out;
+            border: 1px solid rgba(249, 229, 168, 0.4);
+            backdrop-filter: blur(10px);
+        }
+
+        .stars {
+            color: var(--soft-yellow);
+            font-size: 1.2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--soft-green) 0%, var(--sage) 100%);
+            color: white;
+            padding: 1.25rem 3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(200, 213, 185, 0.3);
+            animation: fadeInUp 2s ease-out;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, var(--sage) 0%, var(--soft-green) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(200, 213, 185, 0.4);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--soft-green);
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        /* What You'll Do Section */
+        .activities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .activity-card {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(200, 213, 185, 0.15);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .activity-card:nth-child(1) {
+            border-color: rgba(244, 196, 208, 0.3);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(244, 196, 208, 0.08) 100%);
+        }
+
+        .activity-card:nth-child(1)::before {
+            content: '🌸';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2.5rem;
+            opacity: 0.12;
+        }
+
+        .activity-card:nth-child(2) {
+            border-color: rgba(216, 197, 224, 0.3);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(216, 197, 224, 0.08) 100%);
+        }
+
+        .activity-card:nth-child(2)::before {
+            content: '💮';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2.5rem;
+            opacity: 0.12;
+        }
+
+        .activity-card:nth-child(3) {
+            border-color: rgba(249, 229, 168, 0.3);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(249, 229, 168, 0.08) 100%);
+        }
+
+        .activity-card:nth-child(3)::before {
+            content: '🌼';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 2.5rem;
+            opacity: 0.12;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 45px rgba(200, 213, 185, 0.25);
+        }
+
+        .activity-card:nth-child(1):hover {
+            border-color: var(--rose-pink);
+        }
+
+        .activity-card:nth-child(2):hover {
+            border-color: var(--lavender);
+        }
+
+        .activity-card:nth-child(3):hover {
+            border-color: var(--soft-yellow);
+        }
+
+        .activity-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .activity-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .activity-card:nth-child(1) h3 {
+            color: var(--rose-pink);
+        }
+
+        .activity-card:nth-child(2) h3 {
+            color: var(--lavender);
+        }
+
+        .activity-card:nth-child(3) h3 {
+            color: var(--soft-green);
+        }
+
+        .activity-card p {
+            color: var(--warm-grey);
+            font-size: 1.1rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(249, 229, 168, 0.12) 0%, 
+                    rgba(244, 196, 208, 0.10) 25%,
+                    rgba(216, 197, 224, 0.12) 50%,
+                    rgba(212, 228, 240, 0.08) 75%,
+                    rgba(200, 213, 185, 0.10) 100%);
+            padding: 6rem 2rem;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '🌸';
+            position: absolute;
+            top: 10%;
+            right: 8%;
+            font-size: 3rem;
+            opacity: 0.08;
+            animation: float 9s ease-in-out infinite;
+        }
+
+        .testimonials::after {
+            content: '🌼';
+            position: absolute;
+            bottom: 12%;
+            left: 8%;
+            font-size: 2.8rem;
+            opacity: 0.08;
+            animation: float 10s ease-in-out infinite;
+            animation-delay: 3s;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 25px rgba(200, 213, 185, 0.15);
+            border-left: 3px solid var(--soft-green);
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial:nth-child(2) {
+            border-left-color: var(--lavender);
+        }
+
+        .testimonial:nth-child(3) {
+            border-left-color: var(--rose-pink);
+        }
+
+        .testimonial::before {
+            content: '❝';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 3rem;
+            color: var(--soft-yellow);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--soft-green);
+        }
+
+        .author-location {
+            color: var(--soft-grey);
+            font-size: 0.95rem;
+        }
+
+        /* Details Section */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .detail-box {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 15px rgba(200, 213, 185, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .detail-box:nth-child(1) {
+            border-color: rgba(216, 197, 224, 0.3);
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.7) 0%, rgba(216, 197, 224, 0.1) 100%);
+        }
+
+        .detail-box:nth-child(2) {
+            border-color: rgba(244, 196, 208, 0.3);
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.7) 0%, rgba(244, 196, 208, 0.1) 100%);
+        }
+
+        .detail-box:nth-child(3) {
+            border-color: rgba(249, 229, 168, 0.3);
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.7) 0%, rgba(249, 229, 168, 0.1) 100%);
+        }
+
+        .detail-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(200, 213, 185, 0.2);
+        }
+
+        .detail-box:nth-child(1):hover {
+            border-color: var(--lavender);
+        }
+
+        .detail-box:nth-child(2):hover {
+            border-color: var(--rose-pink);
+        }
+
+        .detail-box:nth-child(3):hover {
+            border-color: var(--soft-yellow);
+        }
+
+        .detail-box h3 {
+            font-family: 'DM Serif Display', serif;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .detail-box:nth-child(1) h3 {
+            color: var(--lavender);
+        }
+
+        .detail-box:nth-child(2) h3 {
+            color: var(--rose-pink);
+        }
+
+        .detail-box:nth-child(3) h3 {
+            color: var(--soft-green);
+        }
+
+        .detail-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detail-box li {
+            padding: 0.5rem 0;
+            color: var(--soft-grey);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .detail-box li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--soft-green);
+            font-weight: bold;
+        }
+
+        /* About Section */
+        .about {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(248, 250, 243, 0.5) 0%, 
+                    rgba(249, 229, 168, 0.08) 30%,
+                    rgba(255, 255, 255, 0.6) 100%);
+            padding: 5rem 2rem;
+            margin: 4rem 0;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+
+        .about::before {
+            content: '🌸';
+            position: absolute;
+            top: 40px;
+            right: 60px;
+            font-size: 3rem;
+            opacity: 0.1;
+            animation: float 9s ease-in-out infinite;
+        }
+
+        .about::after {
+            content: '💮';
+            position: absolute;
+            bottom: 50px;
+            left: 60px;
+            font-size: 2.8rem;
+            opacity: 0.1;
+            animation: float 10s ease-in-out infinite;
+            animation-delay: 3s;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            color: var(--soft-grey);
+            margin-bottom: 1.5rem;
+        }
+
+        .host-name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: var(--soft-green);
+            margin-top: 2rem;
+        }
+
+        /* Location Section */
+        .location {
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .location-info {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2.5rem;
+            border-radius: 20px;
+            display: inline-block;
+            box-shadow: 0 8px 30px rgba(200, 213, 185, 0.2);
+            margin-top: 2rem;
+            border: 2px solid rgba(249, 229, 168, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .location-info p {
+            font-size: 1.3rem;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .location-info .address {
+            color: var(--warm-grey);
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--sage) 0%, var(--soft-green) 100%);
+            color: white;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: var(--cream);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Decorative Elements */
+        .decorative-sheep {
+            position: absolute;
+            font-size: 4rem;
+            opacity: 0.12;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .sheep-1 { top: 15%; left: 10%; animation-delay: 0s; }
+        .sheep-2 { top: 60%; right: 8%; animation-delay: 2s; }
+        .sheep-3 { top: 80%; left: 15%; animation-delay: 4s; }
+
+        /* Floral decorations */
+        .hero::before {
+            content: '🌸';
+            position: absolute;
+            top: 12%;
+            right: 12%;
+            font-size: 3rem;
+            opacity: 0.15;
+            animation: float 10s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+
+        section {
+            position: relative;
+        }
+
+        section::before {
+            content: '💮';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 1.8rem;
+            opacity: 0.08;
+        }
+
+        section:nth-of-type(even)::before {
+            content: '🌼';
+            right: 30px;
+            left: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 1rem;
+            }
+            
+            section {
+                padding: 4rem 1rem;
+            }
+
+            .activities, .testimonial-grid, .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .decorative-sheep {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorative Sheep -->
+    <span class="decorative-sheep sheep-1">🐑</span>
+    <span class="decorative-sheep sheep-2">🐑</span>
+    <span class="decorative-sheep sheep-3">🐑</span>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">A Unique Welsh Experience</p>
+            <h1>Learn to Felt & Meet Our Sheep</h1>
+            <p class="hero-description">Create your own felted sheep from real wool while spending time with our friendly flock at Meadow House</p>
+            
+            <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span><strong>5.0</strong> from 55 reviews</span>
+            </div>
+            
+            <a href="https://www.airbnb.com/l/1RzvR0rN" class="cta-button">Book Your Experience</a>
+        </div>
+    </section>
+
+    <!-- What You'll Do -->
+    <section>
+        <h2>Your Afternoon with Us</h2>
+        <div class="activities">
+            <div class="activity-card">
+                <span class="activity-icon">🐑</span>
+                <h3>Meet the Sheep</h3>
+                <p>Feed, brush, and cuddle our friendly sheep. You might even get to meet bottle-fed lambs if they're around!</p>
+            </div>
+            <div class="activity-card">
+                <span class="activity-icon">🧶</span>
+                <h3>Learn Felting</h3>
+                <p>Master the traditional craft of needle felting and create your own adorable woollen sheep to take home.</p>
+            </div>
+            <div class="activity-card">
+                <span class="activity-icon">☕</span>
+                <h3>Tea & Biscuits</h3>
+                <p>Relax with homemade refreshments and good conversation while you craft your felted creation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <div class="testimonials">
+        <section>
+            <h2>What Guests Are Saying</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">"What a lovely way to spend an afternoon on a farm in Wales! A heartfelt gratitude to Joanna and family for being such fabulous hosts. The experience was truly fun, enjoyable and unique for our whole family."</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">Jacqueline</span>
+                        <span class="author-location">Singapore</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"What an amazing experience! The hosts were so lovely and welcoming and funny! We got to feed the sheep and brush them, and even made our own to take home!"</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">Chloe</span>
+                        <span class="author-location">Liverpool, United Kingdom</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Wonderful experience! The sheep were very friendly and we were even lucky enough to meet the lambs and cuddle up with them too! Would 100% recommend for a truly unique afternoon."</p>
+                    <div class="testimonial-author">
+                        <span class="author-name">Leoni</span>
+                        <span class="author-location">Lancaster, United Kingdom</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Experience Details -->
+    <section>
+        <h2>Experience Details</h2>
+        <div class="details-grid">
+            <div class="detail-box">
+                <h3>What's Included</h3>
+                <ul>
+                    <li>3-hour interactive experience</li>
+                    <li>All felting materials provided</li>
+                    <li>Tea, biscuits & refreshments</li>
+                    <li>Your felted sheep to take home</li>
+                    <li>Time with our friendly sheep</li>
+                </ul>
+            </div>
+            <div class="detail-box">
+                <h3>Good to Know</h3>
+                <ul>
+                    <li>Suitable for ages 2+</li>
+                    <li>Beginner-friendly activity</li>
+                    <li>Wheelchair accessible</li>
+                    <li>Free cancellation (24hrs notice)</li>
+                    <li>Small group setting</li>
+                </ul>
+            </div>
+            <div class="detail-box">
+                <h3>Pricing</h3>
+                <ul>
+                    <li>£55 per person</li>
+                    <li>Book on available dates</li>
+                    <li>Weekend & weekday sessions</li>
+                    <li>Perfect for families & groups</li>
+                    <li>Gift vouchers available</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <div class="about">
+        <div class="about-content">
+            <h2>About Your Host</h2>
+            <p>I'm Joanna, a sheep farmer and felting enthusiast who runs Meadow House, a sustainable smallholding in the beautiful Welsh countryside.</p>
+            <p>Here at Meadow House, we keep sheep in an organic, sustainable environment alongside our ponies, bees, hens, cats, and dogs. I love sharing the traditional craft of felting using wool from our own sheep, and there's nothing better than seeing guests connect with our animals and learn a new skill.</p>
+            <p class="host-name">— Joanna</p>
+        </div>
+    </div>
+
+    <!-- Location -->
+    <section class="location">
+        <h2>Where to Find Us</h2>
+        <div class="location-info">
+            <p><strong>Meadow House</strong></p>
+            <p class="address">Rossett, Wales LL12 0BT</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Meadow House Sheep Felting Experience</p>
+        <p><a href="https://www.airbnb.com/l/1RzvR0rN">Book on Airbnb</a> | Rossett, Wales</p>
+    </footer>
+</body>
+</html>
